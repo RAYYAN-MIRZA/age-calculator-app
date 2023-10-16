@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Frontend Mentor | Age calculator app</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="inp-big-container">
+      <div class="inp-small-container">
+        <div class="inp-text">DAY</div>
+        <input placeholder="DD" class="inp-box input-day" [type="number" ] name="day" id="">
+        <div class="valid valid-day"></div>
+      </div>
+      <div class="inp-small-container">
+        <div class="inp-text">MONTH</div>
+        <input placeholder="MM" class="inp-box input-month" [type="number" ] name="month" id="">
+        <div class="valid valid-month"></div>
+      </div>
+
+      <div class="inp-small-container">
+        <div class="inp-text">YEAR</div>
+        <input placeholder="YYYY" class="inp-box input-year" [type="number" ] name="year" id="">
+        <div class="valid valid-year"></div>
+      </div>
+    </div>
+
+    <div class="button-box">
+      <div class="horizontal-line-one">
+      </div>
+      <svg class="button" onclick="cal()" xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44">
+        <g fill="none" stroke="#FFF" stroke-width="2">
+          <path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44" />
+        </g>
+      </svg>
+      <div class="horizontal-line-two">
+      </div>
+     
+    </div>
+    <div class="age-container">
+      <div class="final-box">
+        <div class="dynamic-age final-year">-- </div>
+        <div class="static-age">&nbspyears</div>
+      </div>
+
+      <div class="final-box">
+        <div class="dynamic-age  final-month">-- </div>
+        <div class="static-age">&nbspmonths</div>
+      </div>
+
+      <div class="final-box">
+        <div class="dynamic-age final-day">-- </div>
+        <div class="static-age">&nbspdays</div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

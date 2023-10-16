@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;     
+    background-color: rgba(128, 128, 128, 0.294);
+}
+
+.container {
+    width: 50%;
+    background-color: white;
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-radius: 1rem;
+    border-bottom-right-radius:5rem;
+}
+
+/***            inp box                 *****/
+input {
+    border-radius: 0.25rem;
+    outline: none;
+    border: 0.5px solid black;
+    padding: 0.25rem 0.25rem;
+}
+
+.inp-box {
+    width: 6ch;
+    font-size: large;
+}
+
+.valid {
+    font-size:6px;
+    width: max-content;
+    color: rgba(255, 0, 0, 0.556);
+    position: absolute;
+    bottom: -0.65rem;
+    left: 0;
+}
+
+.inp-text {
+    width: fit-content;
+    font-size: 8px;
+    padding-bottom: 5px;
+}
+
+.inp-small-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 20%;
+}
+
+.inp-big-container {
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.inp-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 7px;
+}
+
+/***************      buuton box               **************/
+
+.button-box {
+    border: 1px solid firebrick;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    background-color: purple;
+    border-radius: 100%;
+    cursor: pointer;
+    padding: 0.5rem 0.5rem;
+}
+
+.button:hover {
+    background-color: black;
+}
+
+.horizontal-line-one {
+    border: 0.5px solid rgb(0, 0, 0, 0.15);
+    width: 100%;
+    height: 0px;
+    align-self: center;
+    position:static;
+}
+
+.horizontal-line-two {
+    border: 0.5px solid rgb(0, 0, 0, 0.15);
+    width: 100%;
+    height: 0px;
+    align-self: center;
+    position:static;
+}
+
+/***            age container               */
+.age-container {
+    /* border: 2px solid green; */
+}
+
+.final-box {
+    display: flex;
+}
+
+.dynamic-age {
+    color: purple;
+    font-size: 55px;
+    font-weight: 500;
+}
+
+.static-age {
+    font-weight: 500;
+    font-size: 55px;
+}
+
+/*                    Responsivenesss                             */
+
+@media(max-width:550px){
+    .container {
+        width: 90%;
+       }
+    .button{
+        border: 2px solid black;
+        position: absolute;
+        border-radius: 50%;
+    }   
+    .horizontal-line {
+
+    }
+
+}
