@@ -8,7 +8,6 @@ const div_valid_day = document.querySelector(".valid-day");
 const div_valid_month = document.querySelector(".valid-month");
 const div_valid_year = document.querySelector(".valid-year");
 const input_boxes = document.querySelectorAll("input");
-
 const text_above_input = document.getElementsByClassName("inp-text");
 
 let inp_Day;
@@ -20,31 +19,28 @@ let inp_year_bool = false;
 day.addEventListener("input", (e) => {
     inp_Day = e.target.value;
     inp_Day = parseInt(inp_Day);
-    console.log("Day: ", inp_Day);
 });
 
 month.addEventListener("input", (e) => {
     inp_Month = e.target.value;
     inp_Month = parseInt(inp_Month);
-    console.log("Month: ", inp_Month, "type", typeof (inp_Month));
 });
 
 year.addEventListener("input", (e) => {
     inp_Year = e.target.value;
     inp_Year = parseInt(inp_Year);
-    console.log("Year: ", inp_Year);
 });
 
 const currentDate = new Date();
-console.log("Current date==", currentDate);
 const curr_year = currentDate.getFullYear();
 const curr_month = currentDate.getMonth() + 1; // Note: Months are zero-based, so we usually add 1
 const curr_day = currentDate.getDate();
-console.log("cc== ", curr_day, "sdsd==", curr_month, "sds====", curr_year);
 
-/*                                         */
+function empty_input() {
+    inp_Day = ""; inp_Month = ""; inp_Year = "";
+}
+
 function if_input_is_invalid() {
-    console.log("etss checke");
     let check = true;
     if (inp_Year === undefined) {
         div_valid_year.textContent = "this is a required field ";
@@ -75,7 +71,7 @@ function if_input_is_invalid() {
         div_valid_year.textContent = "Must be a valid year";
         check = false;
     }
-    if (inp_Year == curr_year) {              // date must be in the past
+    if (inp_Year === curr_year) {              // date must be in the past
         if (inp_Month > curr_month) {
             div_valid_month.textContent = "Must be a valid month";
             check = false;
@@ -106,7 +102,6 @@ function if_input_is_invalid() {
         }
     }
     if (inp_Month === 2) {
-        console.log("idher aoo");
         if (check_leap(inp_Year)) {
             if (inp_Day > 29) {
                 div_valid_day.textContent = "Must be valid day";
@@ -120,7 +115,6 @@ function if_input_is_invalid() {
             }
         }
     }
-    console.log("LAST ME AGAYAOE ");
     return check;
 }
 
@@ -162,7 +156,7 @@ function cal() {
         for (let i = 0; i < text_above_input.length; i++) {
             text_above_input[i].style.color = "red";
         }
-
+        empty_input();
         return;
     }
     // reverting the changes 
@@ -178,15 +172,14 @@ function cal() {
     div_valid_day.textContent = "";
     div_valid_month.textContent = "";
     div_valid_year.textContent = "";
-    console.log("Sdsdsd");
     const today = new Date();
 
     const age = calculateAge(today.getDate(), today.getMonth(), today.getFullYear(), inp_Day, inp_Month, inp_Year);
 
-    console.log(`Age: ${age.years}- ${age.months}-${age.days}`);
     div_day.textContent = `${age.days}`;
     div_month.textContent = `${age.months}`;
     div_year.textContent = `${age.years}`;
+    empty_input();
 }
 
 function calculateAge(currentDate, currentMonth, currentYear, dob, dobMonth, dobYear) {
@@ -205,9 +198,6 @@ function calculateAge(currentDate, currentMonth, currentYear, dob, dobMonth, dob
     const ageDays = currentDate - dob;
     const ageMonths = currentMonth - dobMonth + 1;
     const ageYears = currentYear - dobYear;
-
-    console.log("Present Age -");
-    console.log("Years: " + ageYears + " Months: " + ageMonths + " Days: " + ageDays);
 
     return {
         years: ageYears,
