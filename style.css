@@ -15,6 +15,7 @@ body {
     align-items: center;
     background-color: rgba(128, 128, 128, 0.294);
     font-family: 'CustomFont';
+    height: 100vh;
 }
 
 .container {
@@ -130,13 +131,20 @@ input {
 
 /*                    Responsivenesss                             */
 
-@media(max-width:550px) {
+@media(max-width:660px) {
     .container {
         width: max-content;
     }
 
     .horizontal-line-two {
         display: block;
+    }
+    .dynamic-age {
+        font-size: 45px;
+    }
+    
+    .static-age {
+        font-size: 45px;
     }
 }
 
@@ -145,11 +153,4 @@ input {
         width: fit-content;
     }
 
-    .dynamic-age {
-        font-size: 45px;
-    }
-
-    .static-age {
-        font-size: 45px;
-    }
 }
